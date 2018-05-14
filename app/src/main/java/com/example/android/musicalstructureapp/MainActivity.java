@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String artist = adapter.getItem(position).getArtistName();
-                String song = adapter.getItem(position).getSongName();
+                String artistName = adapter.getItem(position).getArtistName();
+                String songName = adapter.getItem(position).getSongName();
 
                 Intent intent = new Intent(MainActivity.this, SongDetail.class);
 
-                intent.putExtra("song", song);
-                intent.putExtra("artist", artist);
+                intent.putExtra("song", songName);
+                intent.putExtra("artist", artistName);
 
                 startActivity(intent);
+                finish();
             }
 
         });
